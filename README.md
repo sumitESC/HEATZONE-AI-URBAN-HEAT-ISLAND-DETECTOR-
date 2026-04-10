@@ -32,7 +32,7 @@
 8. [AI-Driven Recommendation Engine](#8-ai-driven-recommendation-engine)
 9. [Real-Time Weather Data Pipeline](#9-real-time-weather-data-pipeline)
 10. [Frontend Modules & Visualization](#10-frontend-modules--visualization)
-11. [Dataset — 24 Cities of Uttar Pradesh](#11-dataset--24-cities-of-uttar-pradesh)
+11. [Dataset — 24 Cities of Uttar Pradesh](#11-dataset--30-cities-of-uttar-pradesh)
 12. [Technology Stack](#12-technology-stack)
 13. [Installation & Setup](#13-installation--setup)
 14. [Usage Guide](#14-usage-guide)
