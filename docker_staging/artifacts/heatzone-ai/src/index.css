@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  /* Heat Zones */
+  --color-heat-cool: hsl(142 71% 45%);
+  --color-heat-moderate: hsl(45 93% 47%);
+  --color-heat-high: hsl(24 95% 53%);
+  --color-heat-extreme: hsl(0 84% 60%);
+
+  /* Chart Colors */
+  --color-chart-1: hsl(var(--primary));
+  --color-chart-2: hsl(200 90% 60%);
+  --color-chart-3: hsl(280 80% 65%);
+  --color-chart-4: hsl(142 71% 45%);
+  --color-chart-5: hsl(45 93% 47%);
+}
+
+:root {
+  /* Dark Data Dashboard Theme as Default */
+  --background: 226 47% 6%;
+  --foreground: 210 40% 98%;
+  
+  --card: 226 45% 10%;
+  --card-foreground: 210 40% 98%;
+  
+  --popover: 226 45% 10%;
+  --popover-foreground: 210 40% 98%;
+  
+  --primary: 15 90% 55%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 226 30% 16%;
+  --secondary-foreground: 210 40% 98%;
+  
+  --muted: 226 30% 16%;
+  --muted-foreground: 215 20% 65%;
+  
+  --accent: 226 30% 20%;
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 226 30% 18%;
+  --input: 226 30% 18%;
+  --ring: 15 90% 55%;
+
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+    background-image: 
+      radial-gradient(circle at 100% 0%, hsla(15, 90%, 55%, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 0% 100%, hsla(200, 90%, 60%, 0.05) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-white;
+  }
+}
+
+/* Custom Scrollbar for sleek dark look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
+
+/* Recharts Customizations */
+.recharts-tooltip-cursor {
+  fill: hsla(226, 30%, 16%, 0.5) !important;
+}
+.leaflet-container {
+  font-family: var(--font-sans);
+  z-index: 10;
+}
+.leaflet-popup-content-wrapper {
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--foreground)) !important;
+  border-radius: var(--radius) !important;
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+.leaflet-popup-tip {
+  background: hsl(var(--card)) !important;
+  border-top: 1px solid hsl(var(--border));
+  border-left: 1px solid hsl(var(--border));
+}
